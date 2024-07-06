@@ -41,7 +41,7 @@
           CROSS_COMPILE: aarch64-linux-gnu-
           j: 6
 
-- hosts: nazgul-ii.ts.judgeglass.net
+- hosts: nazgul-ii
   tasks:
     - name: "Copy src to remote"
       copy:
