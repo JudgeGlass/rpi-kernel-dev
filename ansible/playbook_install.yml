@@ -45,9 +45,6 @@
   tasks:
     - name: "Copy src to remote"
       copy:
-        src: "{{ item }}"
+        src: "../../../linux/"
         dest: /home/judgeglass/test
         owner: judgeglass
-      with_fileglob:
-        - "../../*"
-        - "../../*/"
