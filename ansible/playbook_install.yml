@@ -16,24 +16,27 @@
       make:
         chdir: ../../
         target: Image
+        jobs: 16
         params:
           ARCH: arm64
           CROSS_COMPILE: aarch64-linux-gnu-
-          NUM_THREADS: 16
+
     - name: "Compile RPI Kernel [modules]"
       make:
         chdir: ../../
         target: modules
+        jobs: 16
         params:
           ARCH: arm64
           CROSS_COMPILE: aarch64-linux-gnu-
-          NUM_THREADS: 16
+          j: 6
 
     - name: "Compile RPI Kernel [dtbs]"
       make:
         chdir: ../../
         target: dtbs
+        jobs: 16
         params:
           ARCH: arm64
           CROSS_COMPILE: aarch64-linux-gnu-
-          NUM_THREADS: 16
+          j: 6
