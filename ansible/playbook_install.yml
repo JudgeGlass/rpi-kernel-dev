@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  tasks:
+    - name: "Env vars"
+      shell: "echo KERNEL=kernel_2712"
+
+    - name: "Make config"
+      make:
+        chdir: ../
+        target: bcm2712_defconfig
+
+    - name: "Compile RPI Kernel"
+      make:
+        chdir: ../
+        target: Image.gz modules dtbs
+        params:
+          NUM_THREADS: 16
