@@ -14,7 +14,7 @@
 
     - name: "Compile RPI Kernel"
       make:
-        chdir: ../
+        chdir: ../../
         target: Image modules dtbs
         params:
           ARCH: arm64
