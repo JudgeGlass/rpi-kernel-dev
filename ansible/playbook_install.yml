@@ -44,7 +44,7 @@
 - hosts: nazgul-ii.ts.judgeglass.net
   tasks:
     - name: "Copy src to remote"
-    - copy:
+      copy:
         src: "{{ item }}"
         dest: /home/judgeglass/test
         owner: root
