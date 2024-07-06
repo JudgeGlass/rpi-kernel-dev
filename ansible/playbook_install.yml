@@ -40,3 +40,14 @@
           ARCH: arm64
           CROSS_COMPILE: aarch64-linux-gnu-
           j: 6
+
+- hosts: nazgul-ii.ts.judgeglass.net
+  tasks:
+    - name: "Copy src to remote"
+    - copy:
+        src: "{{ item }}"
+        dest: /home/judgeglass/test
+        owner: root
+        mode: 600
+      with_fileglob:
+        - "../../*"
