@@ -8,10 +8,15 @@
       make:
         chdir: ../../
         target: bcm2712_defconfig
+        params:
+          ARCH: arm64
+          CROSS_COMPILE: aarch64-linux-gnu-
 
     - name: "Compile RPI Kernel"
       make:
         chdir: ../
-        target: Image.gz modules dtbs
+        target: Image modules dtbs
         params:
+          ARCH: arm64
+          CROSS_COMPILE: aarch64-linux-gnu-
           NUM_THREADS: 16
