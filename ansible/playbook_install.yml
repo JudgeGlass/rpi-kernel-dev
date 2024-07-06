@@ -12,10 +12,27 @@
           ARCH: arm64
           CROSS_COMPILE: aarch64-linux-gnu-
 
-    - name: "Compile RPI Kernel"
+    - name: "Compile RPI Kernel [Image]"
       make:
         chdir: ../../
-        target: Image modules dtbs
+        target: Image
+        params:
+          ARCH: arm64
+          CROSS_COMPILE: aarch64-linux-gnu-
+          NUM_THREADS: 16
+    - name: "Compile RPI Kernel [modules]"
+      make:
+        chdir: ../../
+        target: modules
+        params:
+          ARCH: arm64
+          CROSS_COMPILE: aarch64-linux-gnu-
+          NUM_THREADS: 16
+
+    - name: "Compile RPI Kernel [dtbs]"
+      make:
+        chdir: ../../
+        target: dtbs
         params:
           ARCH: arm64
           CROSS_COMPILE: aarch64-linux-gnu-
