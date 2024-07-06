@@ -6,7 +6,7 @@
 
     - name: "Make config"
       make:
-        chdir: ../
+        chdir: ../../
         target: bcm2712_defconfig
 
     - name: "Compile RPI Kernel"
