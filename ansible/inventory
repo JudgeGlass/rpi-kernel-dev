@@ -1,2 +1,2 @@
 [rpi]
-nazgul-ii.ts.judgeglass.net
+nazgul-ii ansible_ssh_host=nazgul-ii.ts.judgeglass.net ansible_ssh_user=judgeglass ansible_ssh_public_key_file=/home/judgeglass/.ssh/laptop.pub
